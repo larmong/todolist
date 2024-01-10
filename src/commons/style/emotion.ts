@@ -6,7 +6,7 @@ export const Common = {
     lightGray: '#bbbbbb',
     point: '#8b6dff',
     darkPoint: '#685f93',
-    border: '#dddddd',
+    border: '#efefef',
   },
   font: {
     default: "'Noto Sans KR', sans-serif",

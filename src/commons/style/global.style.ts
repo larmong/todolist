@@ -1,4 +1,4 @@
-import { css } from '@emotion/css';
+import { css } from '@emotion/react';
 import { Common } from './emotion';
 
 const GlobalStyle = css`
