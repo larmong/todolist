@@ -2,7 +2,7 @@ import { Fragment } from 'react';
 import { Outlet } from 'react-router';
 
 import Header from 'components/layout/header';
-import { IPropsLayout } from './types';
+import { IPropsLayout } from 'types/layout/types';
 
 export default function Layout({ children }: IPropsLayout) {
   return (

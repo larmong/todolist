@@ -1,5 +1,5 @@
-import Router from 'router/router';
+import Pages from 'pages/index';
 
 export default function App(): JSX.Element {
-  return <Router />;
+  return <Pages />;
 }
