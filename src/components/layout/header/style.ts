@@ -1,22 +1,36 @@
 import styled from '@emotion/styled';
 import { Common } from '../../../commons/style/emotion';
-import {IPropsHeaderStyle} from "../../../types/layout/types";
+import { IPropsHeaderStyle } from '../../../types/layout/types';
 
 export const Wrapper = styled.section`
   position: relative;
 `;
 
 export const HeaderWrapper = styled.header`
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 100dvw;
-  height: 25dvh;
-  max-height: 200px;
-  font-size: 1.5em;
+  height: 180px;
+  font-size: 2em;
   color: ${Common.color.white};
   background: ${Common.color.point};
   text-transform: uppercase;
+  text-align: center;
+
+  h1 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100% - 70px);
+  }
+`;
+export const Logo = styled.header`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70px;
+  img {
+    width: 100px;
+  }
 `;
 
 export const NavWrapper = styled.div`
@@ -58,8 +72,7 @@ export const BackBtn = styled.div`
 export const MenuBtn = styled.div`
   position: absolute;
   right: 5px;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -67,7 +80,8 @@ export const MenuBtn = styled.div`
   height: 50px;
   cursor: pointer;
   z-index: 100;
-  color: ${({path, isMenu}: IPropsHeaderStyle) => path === '' || isMenu  ? `${Common.color.white}` : `${Common.color.default}`};
+  color: ${({ path, isMenu }: IPropsHeaderStyle) =>
+    path === '' || isMenu ? `${Common.color.white}` : `${Common.color.default}`};
 
   svg {
     width: 28px;
@@ -89,6 +103,8 @@ export const MenuWrapper = styled.ul`
   align-items: flex-end;
   padding: 200px 20px;
   gap: 20px;
+  z-index: 99;
+  font-weight: 600;
 
   li {
     position: relative;
@@ -105,7 +121,7 @@ export const MenuWrapper = styled.ul`
   }
   li::before {
     transition: 0.2s ease-in-out;
-    content: "";
+    content: '';
     position: absolute;
     left: -25px;
     top: calc(50% - 2px);

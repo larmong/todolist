@@ -109,7 +109,9 @@ const GlobalStyle = css`
     padding: 0;
     border: 0;
   }
-  a {
+  a,
+  em {
+    font-style: normal;
     text-decoration: none;
     color: #333;
   }

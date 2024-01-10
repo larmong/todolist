@@ -4,9 +4,10 @@ import { IoIosArrowBack } from 'react-icons/io';
 import { CgMenuRightAlt } from 'react-icons/cg';
 import { MdOutlineClose } from 'react-icons/md';
 
-import { BackBtn, HeaderWrapper, MenuBtn, MenuWrapper, NavWrapper, Wrapper } from './style';
+import { BackBtn, HeaderWrapper, Logo, MenuBtn, MenuWrapper, NavWrapper, Wrapper } from './style';
 import { Common } from '../../../commons/style/emotion';
 import { MenuListType } from '../../../types/layout/types';
+import { Image } from 'antd';
 
 export default function Header(): JSX.Element {
   const params = useLocation();
@@ -43,7 +44,10 @@ export default function Header(): JSX.Element {
     <Wrapper>
       {!path ? (
         <HeaderWrapper>
-          <h1>TODO LIST</h1>
+          <Logo>
+            <img src={process.env.PUBLIC_URL + '/images/logo.svg'} alt="Logo" />
+          </Logo>
+          <h1>TODO LIST !</h1>
         </HeaderWrapper>
       ) : (
         <NavWrapper>
