@@ -5,7 +5,7 @@ export const Common = {
     gray: '#666666',
     lightGray: '#bbbbbb',
     point: '#8b6dff',
-    darkPoint: '#685f93',
+    darkPoint: '#635091',
     border: '#efefef',
   },
   font: {
