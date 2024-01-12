@@ -1,8 +1,11 @@
 import { v4 as uuidv4 } from 'uuid';
 
-import { TaskType } from 'types/task/types';
+import { TaskType } from 'types/components/task/types';
 import { TaskList, Wrapper } from './style';
 import Task from 'components/task';
+import DefaultModal from 'components/modal/defaultModal';
+import { useAppSelector } from 'store/hooks';
+import { RootState } from 'store/store';
 
 export default function Main(): JSX.Element {
   const data: TaskType[] = [
@@ -41,6 +44,8 @@ export default function Main(): JSX.Element {
     },
   ];
 
+  const isModal = useAppSelector((state: RootState) => state.modal.value);
+
   return (
     <Wrapper>
       <TaskList>
@@ -48,6 +53,7 @@ export default function Main(): JSX.Element {
           <Task key={task.id} data={task} />
         ))}
       </TaskList>
+      {isModal && <DefaultModal />}
     </Wrapper>
   );
 }

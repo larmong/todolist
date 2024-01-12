@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { Common } from '../../commons/style/emotion';
-import { IsStateType } from '../../types/task/types';
+import { IsStateType } from '../../types/components/task/types';
 
 export const Wrapper = styled.div`
   display: flex;

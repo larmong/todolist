@@ -5,8 +5,8 @@ import { CgMenuRightAlt } from 'react-icons/cg';
 import { MdOutlineClose } from 'react-icons/md';
 
 import { BackBtn, HeaderWrapper, MenuBtn, MenuWrapper, NavWrapper, Wrapper } from './style';
-import { Common } from '../../../commons/style/emotion';
-import { MenuListType } from '../../../types/layout/types';
+import { Common } from 'commons/style/emotion';
+import { MenuListType } from 'types/layout/types';
 
 export default function Header(): JSX.Element {
   const params = useLocation();
