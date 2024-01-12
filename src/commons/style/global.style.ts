@@ -133,6 +133,28 @@ const GlobalStyle = css`
   textarea::placeholder {
     font-size: 14px;
   }
+
+  // antd
+  .ant-btn-reset {
+    width: 100%;
+    border: none;
+    height: auto;
+    padding: 0;
+  }
+  .ant-form-item {
+    margin-bottom: 16px;
+  }
+  .form-input {
+    height: 40px;
+    &::placeholder {
+      font-size: 14px;
+    }
+    &:hover,
+    &:active,
+    &:focus-within {
+      border: 1px solid ${Common.color.point};
+    }
+  }
 `;
 
 export default GlobalStyle;

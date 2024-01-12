@@ -1,6 +1,4 @@
 import axios from 'axios';
-import { message } from 'antd';
-
 import { serverErrorMessage } from 'commons/utils/error';
 
 export default function AxiosInstanceCreator(config: any) {
@@ -10,8 +8,12 @@ export default function AxiosInstanceCreator(config: any) {
     const modifiedConfig = {
       ...axiosConfig,
       baseURL: process.env.REACT_APP_BASE_API as string,
-      'Content-Type': 'application/json',
+      withCredentials: true,
     };
+
+    Object.assign(modifiedConfig.headers, {
+      'Content-Type': 'application/json',
+    });
 
     if (!modifiedConfig.headers?.Authorization) {
       Object.assign(modifiedConfig.headers, {
@@ -25,7 +27,10 @@ export default function AxiosInstanceCreator(config: any) {
   axiosInstance.interceptors.response.use(
     (response) => response,
     (error) => {
-      return message.error(serverErrorMessage(error.response.data.errorCode));
+      if (error) {
+        alert(serverErrorMessage(error.response?.data?.errorCode));
+      }
+      return Promise.reject(error);
     }
   );
 

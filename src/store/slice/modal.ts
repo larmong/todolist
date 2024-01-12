@@ -9,7 +9,7 @@ interface modalState {
 
 // value
 const initialState: modalState = {
-  value: true,
+  value: false,
 };
 
 // reducer

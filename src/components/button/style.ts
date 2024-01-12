@@ -2,9 +2,9 @@ import styled from '@emotion/styled';
 import { Common } from '../../commons/style/emotion';
 
 export const Wrapper = styled.div`
-  margin: 0 auto;
-  width: 50%;
-  height: 36px;
+  width: 100%;
+  height: 100%;
+  min-height: 36px;
   border-radius: 5px;
   font-size: 0.9em;
   cursor: pointer;
@@ -15,7 +15,7 @@ export const Wrapper = styled.div`
   border: 1px solid ${Common.color.point};
   background: ${Common.color.point};
   color: ${Common.color.white};
-
+  padding-top: 2px;
   &.line {
     background: ${Common.color.white};
     color: ${Common.color.point};

@@ -1,5 +1,5 @@
 import { BtnGroup, Modal, ModalText, Wrapper } from './style';
-import Button from '../../button';
+import Button from 'components/button';
 
 export default function DefaultModal(): JSX.Element {
   return (
@@ -11,8 +11,8 @@ export default function DefaultModal(): JSX.Element {
           {/*<span>서브 텍스트 서브 텍스트 서브 텍스트</span>*/}
         </ModalText>
         <BtnGroup>
-          <Button text="취소" class="line" type="close" />
-          <Button />
+          <Button text="취소" class="line" />
+          <Button text="로그아웃" type="logout" />
         </BtnGroup>
       </Modal>
     </Wrapper>

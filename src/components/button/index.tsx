@@ -7,6 +7,10 @@ export default function Button(props: IPropsButton): JSX.Element {
   const dispatch = useAppDispatch();
 
   const onClickBtn = () => {
+    if (props.type === 'logout') {
+      // TODO: 로그아웃
+    }
+
     dispatch(modalActions.update(false));
   };
 

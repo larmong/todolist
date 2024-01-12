@@ -45,5 +45,6 @@ export const ModalText = styled.div`
 `;
 export const BtnGroup = styled.div`
   display: flex;
+  justify-content: center;
   gap: 10px;
 `;
