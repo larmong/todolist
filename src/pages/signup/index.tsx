@@ -57,7 +57,7 @@ export default function Signup(): JSX.Element {
         </Form.Item>
         <Form.Item>
           <Button htmlType="submit" className="ant-btn-reset">
-            <SignupButton text="Signup" />
+            <SignupButton text="SINGUP" />
           </Button>
         </Form.Item>
       </Form>
