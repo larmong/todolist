@@ -4,7 +4,6 @@ import { FaRegPenToSquare } from 'react-icons/fa6';
 import * as S from './style';
 
 export default function Task({ data }: any): JSX.Element {
-  console.log(data);
   return (
     <S.Wrapper>
       <S.TaskState isState={data.state}>
@@ -12,25 +11,23 @@ export default function Task({ data }: any): JSX.Element {
       </S.TaskState>
       <S.TaskCont isState={data.state}>
         <S.TaskInfo isState={data.state}>
-          <S.TaskInfoTop>
-            <S.TaskTag isState={data.state}>
-              {data.state === '0' ? '할 일' : data.state === '1' ? '진행중' : '완료'}
-            </S.TaskTag>
-            <S.TaskDate>
+          <S.TaskInfoTop isState={data.state}>
+            <span>{data.state === '0' ? '할 일' : data.state === '1' ? '진행중' : '완료'}</span>
+            <p>
               {data.startDate} ~ {data.endDate}
-            </S.TaskDate>
+            </p>
           </S.TaskInfoTop>
           <S.TaskInfoCenter>
-            <S.TaskTitle>{data.title}</S.TaskTitle>
-            <S.TaskMemo>{data.contents}</S.TaskMemo>
+            <p>{data.title}</p>
+            <span>{data.contents}</span>
           </S.TaskInfoCenter>
           <S.TaskInfoBottom>
-            <S.TaskCreated>
+            <span>
               <em>create</em> {data.created}
-            </S.TaskCreated>
-            <S.TaskUpdated>
+            </span>
+            <span>
               <em>update</em> {data.updated}
-            </S.TaskUpdated>
+            </span>
           </S.TaskInfoBottom>
         </S.TaskInfo>
         <S.TaskBtn>

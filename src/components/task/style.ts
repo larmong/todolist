@@ -15,8 +15,8 @@ export const TaskState = styled.div`
   align-items: center;
   span {
     display: block;
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     border: 5px solid ${Common.color.point};
     border: ${(props: IsStateType) =>
       props.isState === '1' ? `5px solid ${Common.color.point}` : `5px solid ${Common.color.lightGray}`};
@@ -47,46 +47,47 @@ export const TaskInfo = styled.div`
   gap: 5px;
   opacity: ${(props: IsStateType) => (props.isState === '2' ? '0.6' : '1')};
 `;
+
 export const TaskInfoTop = styled.div`
   display: flex;
   gap: 10px;
-  font-size: 0.9em;
-`;
-export const TaskTag = styled.span`
-  display: inline-flex;
-  border-radius: 5px;
-  padding: 1px 4px 3px 4px;
   font-size: 0.8em;
-  color: ${Common.color.white};
-  background: ${(props: IsStateType) =>
-    props.isState === '0'
-      ? `${Common.color.lightGray}`
-      : props.isState === '2'
-        ? `${Common.color.gray}`
-        : `${Common.color.point}`};
-`;
-export const TaskDate = styled.span`
-  opacity: 0.6;
+  span {
+    display: inline-flex;
+    border-radius: 5px;
+    padding: 1px 4px 3px 4px;
+    font-size: 0.8em;
+    color: ${Common.color.white};
+    background: ${(props: IsStateType) =>
+      props.isState === '0'
+        ? `${Common.color.lightGray}`
+        : props.isState === '2'
+          ? `${Common.color.gray}`
+          : `${Common.color.point}`};
+  }
+  p {
+    color: ${Common.color.gray};
+  }
 `;
 
 export const TaskInfoCenter = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 3px;
-  p {
+  p,
+  span {
     max-width: 100%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
-`;
-export const TaskTitle = styled.p`
-  font-size: 1.2em;
-  font-weight: 700;
-  color: ${Common.color.darkPoint};
-`;
-export const TaskMemo = styled.p`
-  font-size: 0.9em;
+  p {
+    font-weight: 700;
+    color: ${Common.color.darkPoint};
+  }
+  span {
+    color: ${Common.color.gray};
+    font-size: 0.8em;
+  }
 `;
 
 export const TaskInfoBottom = styled.div`
@@ -103,8 +104,6 @@ export const TaskInfoBottom = styled.div`
     }
   }
 `;
-export const TaskCreated = styled.span``;
-export const TaskUpdated = styled.span``;
 
 export const TaskBtn = styled.div`
   width: 62px;
@@ -117,7 +116,7 @@ export const TaskBtn = styled.div`
     display: inline-block;
   }
   svg {
-    opacity: 0.8;
+    color: ${Common.color.gray};
     width: 20px;
     height: 20px;
   }

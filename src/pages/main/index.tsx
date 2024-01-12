@@ -1,35 +1,40 @@
+import { v4 as uuidv4 } from 'uuid';
+
+import { TaskType } from 'types/task/types';
 import { TaskList, Wrapper } from './style';
-import Task from '../../components/task';
-import { TaskType } from '../../types/task/types';
+import Task from 'components/task';
 
 export default function Main(): JSX.Element {
   const data: TaskType[] = [
     {
+      id: uuidv4(),
       state: '0',
       startDate: '2024.01.02',
       endDate: '2024.01.05',
-      title: '제목은 루이랑 애견카페 가기',
-      contents: '내용은 루이랑 애견카페 가기',
+      title: '투두리스트 제목 대기중1111',
+      contents: '투두리스트 내용 내용내용',
       memo: '',
       created: '2024.01.02',
       updated: '2024.01.02',
     },
     {
+      id: uuidv4(),
       state: '1',
       startDate: '2024.01.02',
       endDate: '2024.01.05',
-      title: '리액트 공부하기',
-      contents: '리액트 공부해야징',
+      title: '투두리스트 제목 진행중2222',
+      contents: '투두리스트 내용 내용내용',
       memo: '',
       created: '2024.01.02',
       updated: '2024.01.02',
     },
     {
+      id: uuidv4(),
       state: '2',
       startDate: '2024.01.02',
       endDate: '2024.01.05',
-      title: 'react query 공부해야댐',
-      contents: '이것두 리액트얌',
+      title: '투두리스트 제목 완료3333',
+      contents: '투두리스트 내용 내용내용',
       memo: '',
       created: '2024.01.02',
       updated: '2024.01.02',
@@ -40,7 +45,7 @@ export default function Main(): JSX.Element {
     <Wrapper>
       <TaskList>
         {data.map((task: TaskType) => (
-          <Task data={task} />
+          <Task key={task.id} data={task} />
         ))}
       </TaskList>
     </Wrapper>

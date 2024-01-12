@@ -1,4 +1,5 @@
 export interface TaskType {
+  id: string;
   state: string;
   startDate: string;
   endDate: string;

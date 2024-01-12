@@ -13,24 +13,9 @@ export const HeaderWrapper = styled.header`
   color: ${Common.color.white};
   background: ${Common.color.point};
   text-transform: uppercase;
-  text-align: center;
-
-  h1 {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: calc(100% - 70px);
-  }
-`;
-export const Logo = styled.header`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 70px;
-  img {
-    width: 100px;
-  }
 `;
 
 export const NavWrapper = styled.div`
@@ -44,7 +29,6 @@ export const NavWrapper = styled.div`
   text-transform: uppercase;
   font-size: 1.1em;
   font-weight: 500;
-
   span {
     display: block;
     padding-bottom: 1px;
@@ -82,7 +66,6 @@ export const MenuBtn = styled.div`
   z-index: 100;
   color: ${({ path, isMenu }: IPropsHeaderStyle) =>
     path === '' || isMenu ? `${Common.color.white}` : `${Common.color.default}`};
-
   svg {
     width: 28px;
     height: 28px;
@@ -105,7 +88,6 @@ export const MenuWrapper = styled.ul`
   gap: 20px;
   z-index: 99;
   font-weight: 600;
-
   li {
     position: relative;
     color: ${Common.color.white};

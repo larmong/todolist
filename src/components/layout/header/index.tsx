@@ -4,10 +4,9 @@ import { IoIosArrowBack } from 'react-icons/io';
 import { CgMenuRightAlt } from 'react-icons/cg';
 import { MdOutlineClose } from 'react-icons/md';
 
-import { BackBtn, HeaderWrapper, Logo, MenuBtn, MenuWrapper, NavWrapper, Wrapper } from './style';
+import { BackBtn, HeaderWrapper, MenuBtn, MenuWrapper, NavWrapper, Wrapper } from './style';
 import { Common } from '../../../commons/style/emotion';
 import { MenuListType } from '../../../types/layout/types';
-import { Image } from 'antd';
 
 export default function Header(): JSX.Element {
   const params = useLocation();
@@ -44,9 +43,6 @@ export default function Header(): JSX.Element {
     <Wrapper>
       {!path ? (
         <HeaderWrapper>
-          <Logo>
-            <img src={process.env.PUBLIC_URL + '/images/logo.svg'} alt="Logo" />
-          </Logo>
           <h1>TODO LIST !</h1>
         </HeaderWrapper>
       ) : (
@@ -70,8 +66,9 @@ export default function Header(): JSX.Element {
         {isMenu ? <MdOutlineClose /> : <CgMenuRightAlt />}
       </MenuBtn>
       <MenuWrapper style={{ right: `${isMenu ? '0' : '-100dvw'}` }}>
-        {menuList.map((menu: MenuListType) => (
+        {menuList.map((menu: MenuListType, index: number) => (
           <li
+            key={index}
             onClick={() => {
               navigate(`/${menu.route}`);
               setIsMen((prev: boolean) => !prev);
