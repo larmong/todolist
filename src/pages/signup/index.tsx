@@ -1,9 +1,10 @@
-import { Button, Form, Input } from 'antd';
+import { Button, Form, Input, Select } from 'antd';
 
 import { Title, Wrapper } from './style';
 import SignupButton from 'components/button';
 
 export default function Signup(): JSX.Element {
+  const { Option } = Select;
   const [signupForm] = Form.useForm();
 
   const handleClickSignup = async (values: any) => {
@@ -49,10 +50,19 @@ export default function Signup(): JSX.Element {
             <Input className="form-input" placeholder="이름을 입력해주세요." />
           </div>
         </Form.Item>
-        <Form.Item name="phone" rules={[{ required: true, message: '연락처를 입력해주세요.' }]}>
+        <Form.Item name="phone" rules={[{ required: true, message: 'Please input your phone number!' }]}>
           <div>
             <Title>phone</Title>
-            <Input className="form-input" placeholder="연락처를 입력해주세요." />
+            <Input
+              addonBefore={
+                <Form.Item className="form-input" name="prefix" noStyle>
+                  <Select style={{ width: 100 }}>
+                    <Option value="010">010</Option>
+                  </Select>
+                </Form.Item>
+              }
+              style={{ width: '100%' }}
+            />
           </div>
         </Form.Item>
         <Form.Item>

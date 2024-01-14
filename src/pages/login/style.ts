@@ -26,7 +26,7 @@ export const Title = styled.div`
 export const Signup = styled.div`
   text-align: center;
   color: ${Common.color.gray};
-  font-size: 0.8em;
+  font-size: 0.9em;
   span {
     padding: 3px 7px;
     cursor: pointer;

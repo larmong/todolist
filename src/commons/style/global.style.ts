@@ -144,6 +144,10 @@ const GlobalStyle = css`
   .ant-form-item {
     margin-bottom: 16px;
   }
+  .ant-input-wrapper,
+  .ant-input {
+    height: 40px;
+  }
   .form-input {
     height: 40px;
     &::placeholder {

@@ -5,8 +5,10 @@ import { Signup, Title, Wrapper } from './style';
 import { LoginType } from 'types/login/types';
 import { loginAPI } from 'apis/login';
 import LoginButton from 'components/button';
+import { useNavigate } from 'react-router';
 
 export default function Login(): JSX.Element {
+  const navigate = useNavigate();
   const [loginForm] = Form.useForm();
 
   const handleClickLogin = async (values: LoginType) => {
@@ -58,7 +60,13 @@ export default function Login(): JSX.Element {
         </Form.Item>
       </Form>
       <Signup>
-        <span>회원가입</span>
+        <span
+          onClick={() => {
+            navigate('/signup');
+          }}
+        >
+          회원가입
+        </span>
       </Signup>
     </Wrapper>
   );
