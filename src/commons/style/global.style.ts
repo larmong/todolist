@@ -144,8 +144,7 @@ const GlobalStyle = css`
   .ant-form-item {
     margin-bottom: 16px;
   }
-  .ant-input-wrapper,
-  .ant-input {
+  .ant-input-wrapper {
     height: 40px;
   }
   .form-input {
@@ -158,6 +157,12 @@ const GlobalStyle = css`
     &:focus-within {
       border: 1px solid ${Common.color.point};
     }
+  }
+  .phone-input input {
+    height: 40px;
+  }
+  .ant-input-group .ant-input-group-addon .ant-select-focused .ant-select-selector {
+    color: ${Common.color.default};
   }
 `;
 

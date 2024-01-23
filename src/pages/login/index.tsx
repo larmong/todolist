@@ -1,11 +1,11 @@
 import { Button, Form, Input } from 'antd';
+import { useNavigate } from 'react-router';
 import { FaKey, FaUser } from 'react-icons/fa';
 
 import { Signup, Title, Wrapper } from './style';
 import { LoginType } from 'types/login/types';
 import { loginAPI } from 'apis/login';
 import LoginButton from 'components/button';
-import { useNavigate } from 'react-router';
 
 export default function Login(): JSX.Element {
   const navigate = useNavigate();

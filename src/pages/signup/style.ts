@@ -1,9 +1,9 @@
 import styled from '@emotion/styled';
-import { Common } from '../../commons/style/emotion';
+import { Common } from 'commons/style/emotion';
 
 export const Wrapper = styled.div`
   margin: 40px auto;
-  width: 400px;
+  max-width: 400px;
   .ant-btn-reset {
     height: 40px;
     font-size: 16px;
@@ -11,7 +11,7 @@ export const Wrapper = styled.div`
   }
   .id-line {
     display: flex;
-    gap: 16px;
+    gap: 10px;
     .line {
       width: 120px;
       height: 40px;
